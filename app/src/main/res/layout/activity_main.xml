@@ -140,6 +140,10 @@
             android:text="@string/arise_hybrid_link"
             android:textColor="@color/baby_blue"
             android:textSize="14sp"
+
+            android:gravity="start"
+            android:textDirection="locale"
+            
             app:drawableStartCompat="@drawable/baseline_insert_link_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
