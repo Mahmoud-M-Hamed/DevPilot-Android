@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">انهض</string>
+    <string name="jinwoo_character_description">
+صيّاد مميز يستطيع "رفع مستواه".
+بعد حادثة "الزنزانة المزدوجة"،
+هذا الصياد السابق من رتبة E حصل
+على "النظام " الذي ساعده على أن يصبح أقوى.
+كان يُلقَّب سابقاً بـ
+"أضعف صياد في تاريخ البشرية"،
+لكنه الآن يمتلك القدرة على
+تحويل الموتى إلى "جنود الظل".
+</string>
+    <string name="vector_background">VectorBackgroundContentDescription</string>
+    <string name="arise_hybrid_link">Arise.com</string>
+    <string name="solo_leveling_netmarble_url">https://sololeveling.netmarble.com/en</string>
+    <string name="solo_leveling_image_url">https://i.pinimg.com/736x/78/e4/61/78e461bbfb0dc05cad77aea5af2a5e80.jpg</string>
+    <string name="solo_leveling_trans_logo_content_description">Solo Leveling Transparent Logo</string>
+    <string name="ebic_games">إيبك جيمز</string>
+    <string name="ebic_games_logo">Ebic Games Logo</string>
+    <string name="arise">انهض</string>
+    <string name="solo_leveling">سولو ليفلينغ</string>
+</resources>
