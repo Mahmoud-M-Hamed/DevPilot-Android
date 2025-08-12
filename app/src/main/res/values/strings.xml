@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Dev Pilot Android Native</string>
-    <string name="welcome_to_android_g">Welcome to Android G</string>
+    <string name="app_name">Arise</string>
     <string name="jinwoo_character_description">
     A special hunter who can &quot;level up&quot;.
     After the &quot;Double Dungeon&quot; incident,
@@ -12,8 +11,13 @@
     he now has the ability to
     turn the dead into his &quot;Shadow Soldiers.&quot;
 </string>
-    <string name="vectorBackground">VectorBackgroundContentDescription</string>
+    <string name="vector_background">VectorBackgroundContentDescription</string>
     <string name="arise_hybrid_link">Arise.com</string>
-    <string name="solo_leveling_logo">https://i.pinimg.com/736x/78/e4/61/78e461bbfb0dc05cad77aea5af2a5e80.jpg</string>
+    <string name="solo_leveling_netmarble_url">https://sololeveling.netmarble.com/en</string>
+    <string name="solo_leveling_image_url">https://i.pinimg.com/736x/78/e4/61/78e461bbfb0dc05cad77aea5af2a5e80.jpg</string>
     <string name="solo_leveling_trans_logo_content_description">Solo Leveling Transparent Logo</string>
+    <string name="ebic_games">Ebic Games</string>
+    <string name="ebic_games_logo">Ebic Games Logo</string>
+    <string name="arise">Arise</string>
+    <string name="solo_leveling">Solo Leveling</string>
 </resources>
