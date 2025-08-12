@@ -1,33 +1,71 @@
 package com.example.devpilotandroidnative
 
-import android.graphics.Paint
+import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
+import android.view.Window;
+import android.view.WindowManager;
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.toColor
+import androidx.core.view.WindowCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.bumptech.glide.Glide
+import androidx.core.view.get
+import androidx.core.view.updatePadding
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-        val imageView = findViewById<ImageView>(R.id.soloLevelingLogo)
-        val soloLevelingLogo: String = getString(R.string.solo_leveling_logo)
-        Glide.with(this)
-            .load(soloLevelingLogo)
-            .error(R.drawable.vector_background)
-            .into(imageView)
+        UiHelper.applyEdgeToEdge(
+            activity = this,
+            rootViewId = R.id.main
+        )
         
+        /*WindowCompat.getInsetsController(window, window.decorView)
+            .isAppearanceLightStatusBars = true*/
+
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        
+        ViewCompat.setOnApplyWindowInsetsListener(window.decorView) 
+        { v, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars())
+            v.updatePadding(0, insets.top, insets.right, 0)
+            v.setBackgroundColor(getColor(R.color.deep_purple))
+            WindowInsetsCompat.CONSUMED
+        }
+
+        val soloLevelingImageView = findViewById<ImageView>(R.id.solo_leveling_logo)
+        val soloLevelingImageUrl: String = getString(R.string.solo_leveling_image_url)
+        val errorDrawableImageViewId = R.drawable.vector_background
+
+        UiHelper.retrieveImage(
+            context = this,
+            imageUrl = soloLevelingImageUrl,
+            imageView = soloLevelingImageView,
+            errorDrawable = errorDrawableImageViewId,
+        )
+
         val ariseHybridLinkTV = findViewById<TextView>(R.id.arise_hybrid_link)
-        ariseHybridLinkTV.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+        UiHelper.underLineTextView(ariseHybridLinkTV)
+
+        val soloLevelingWebsiteUrl: String = getString(R.string.solo_leveling_netmarble_url)
+        val soloLevelingWebsiteURI: Uri = soloLevelingWebsiteUrl.toUri()
+        ariseHybridLinkTV.setOnClickListener {
+            val intentLauncher = Intent(Intent.ACTION_VIEW, soloLevelingWebsiteURI)
+            startActivity(intentLauncher)
+        }
     }
+
+
 }
