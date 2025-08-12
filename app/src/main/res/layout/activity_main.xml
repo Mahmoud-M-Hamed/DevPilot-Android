@@ -1,142 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
+    android:background="@color/white">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#3E345B"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        tools:context=".MainActivity">
+        
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/deep_purple"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-            <TextView
-                android:id="@+id/my_toolbar_title"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Arise"
-                android:textColor="@android:color/white"
-                android:textSize="22sp" />
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/my_toolbar_subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Solo Leveling"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
+                <TextView
+                    android:id="@+id/my_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/arise"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
 
-                />
+                <TextView
+                    android:id="@+id/my_toolbar_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/solo_leveling"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    />
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </androidx.appcompat.widget.Toolbar>
-
-
-    <ImageView
-        android:id="@+id/sungJinwooSoloLeveling"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
-        android:contentDescription="@string/solo_leveling_trans_logo_content_description"
-        android:src="@drawable/sung_jinwoo_solo_leveling"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
-
-    <ImageView
-        android:id="@+id/soloLevelingTransLogo"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:contentDescription="@string/solo_leveling_trans_logo_content_description"
-        android:scaleType="centerCrop"
-        android:src="@drawable/solo_leveling_trans_logo"
-        app:layout_constraintEnd_toEndOf="@id/sungJinwooSoloLeveling"
-        app:layout_constraintStart_toStartOf="@id/sungJinwooSoloLeveling"
-        app:layout_constraintTop_toBottomOf="@id/sungJinwooSoloLeveling" />
-
-    <ImageView
-        android:id="@+id/soloLevelingLogo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alpha="0.3"
-        android:contentDescription="@string/solo_leveling_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/jinwooCharacterDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginVertical="40dp"
-        android:lineSpacingExtra="3dp"
-        android:text="@string/jinwoo_character_description"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/soloLevelingTransLogo" />
-
-
-    <LinearLayout
-        android:id="@id/ebic_games"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <ImageView
-            android:layout_width="40dp"
+            android:id="@+id/solo_leveling_logo"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_marginTop="180dp"
+            android:alpha="0.3"
+            android:contentDescription="@string/solo_leveling_image_url"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
+
+
+
+        <ImageView
+            android:id="@+id/sung_jinwoo_solo_leveling"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@string/solo_leveling_trans_logo_content_description"
+            android:src="@drawable/sung_jinwoo_solo_leveling"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
+
+        <ImageView
+            android:id="@+id/solo_leveling_transLogo"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:src="@drawable/ebic_logo" />
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:contentDescription="@string/solo_leveling_trans_logo_content_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/solo_leveling_trans_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sung_jinwoo_solo_leveling" />
+
+
+        <TextView
+            android:id="@+id/jinwoo_character_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/jinwoo_character_description"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/solo_leveling_transLogo" />
+
 
         <TextView
             android:id="@+id/ebic_games"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="180dp"
+            android:contentDescription="@string/ebic_games_logo"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="Ebic Games"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:text="@string/ebic_games"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/epic_games_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/jinwoo_character_description" />
 
-    <TextView
-        android:id="@+id/arise_hybrid_link"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         
-        android:drawablePadding="2dp"
-        android:text="@string/arise_hybrid_link"
-        android:textColor="#27B4F5"
-        app:drawableStartCompat="@drawable/baseline_insert_link_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ebic_games"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/arise_hybrid_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="50dp"
+            android:drawablePadding="4dp"
+            android:text="@string/arise_hybrid_link"
+            android:textColor="@color/baby_blue"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/baseline_insert_link_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ebic_games"
+             />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
