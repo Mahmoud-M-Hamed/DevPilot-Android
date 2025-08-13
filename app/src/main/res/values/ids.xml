@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="arise_button" type="id">arise_button</item>
+    <item name="arise_activity_TV_id" type="id">arise_activity_TV_id</item>
+</resources>
