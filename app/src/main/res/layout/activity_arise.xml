@@ -6,17 +6,56 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AriseActivity">
-    
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/arise_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/deep_purple"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/my_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@string/arise"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/my_toolbar_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/solo_leveling"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
     <TextView
         android:id="@+id/arise_activity_TV_id"
         android:text="@string/arise"
+        android:textColor="@android:color/black"
+
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/arise_activity_TV_id"
+        app:layout_constraintTop_toBottomOf="@id/arise_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -24,11 +63,12 @@
     <TextView
         android:id="@+id/arise_activity_TV_id2"
         android:text="@string/arise"
+        android:textColor="@android:color/black"
+
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="80dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@id/arise_activity_TV_id"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,10 +77,11 @@
     <TextView
         android:id="@+id/arise_activity_TV_id3"
         android:text="@string/arise"
+        android:textColor="@android:color/black"
+
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="100dp"
         app:layout_constraintTop_toBottomOf="@id/arise_activity_TV_id2"
         app:layout_constraintStart_toStartOf="parent"
