@@ -42,10 +42,20 @@ class MainActivity : AppCompatActivity() {
             startActivity(ariseActivityIntent)
         }
 
-        changeDescriptionButton.setOnClickListener { view -> 
+        var isDefaultDescription = true
+
+        changeDescriptionButton.setOnClickListener { view ->
+
+            if (isDefaultDescription) {
+                jinwooTextView.text = "This is Jinwoo Arise era..."
+            } else {
+                jinwooTextView.text = getString(R.string.jinwoo_character_description) // put your original in strings.xml
+            }
+            isDefaultDescription = !isDefaultDescription
+            
             val ariseActivityIntent = Intent(this@MainActivity, AriseActivity::class.java)
             ariseActivityIntent.putExtra("characterDescription", jinwooTextView.text)
-            jinwooTextView.text = "This is Jinwoo Arise era..."
+            
         }
         
         
