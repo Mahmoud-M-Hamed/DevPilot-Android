@@ -1,8 +1,10 @@
 package com.example.devpilotandroidnative
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -16,15 +18,38 @@ import androidx.core.view.updatePadding
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         //setupEdgeToEdgeMode()
-        setupStatusBarPadding()
+        //setupStatusBarPadding()
+        UiHelper.setupStatusBarPadding(window = window, color = getColor(R.color.deep_purple))
         setupSoloLevelingImage()
         setupAriseHybridLink()
+        
+        val ariseButton = findViewById<Button>(R.id.arise_button)
+        val changeDescriptionButton = findViewById<Button>(R.id.change_character_description_btn)
+        val jinwooTextView = findViewById<TextView>(R.id.jinwoo_character_description)
+        
+        
+        ariseButton.setOnClickListener { view -> 
+            val ariseActivityIntent = Intent(this@MainActivity, AriseActivity::class.java)
+            ariseActivityIntent.putExtra("characterName", "Sung Jinwoo")
+            ariseActivityIntent.putExtra("characterDescription", jinwooTextView.text)
+            startActivity(ariseActivityIntent)
+        }
+
+        changeDescriptionButton.setOnClickListener { view -> 
+            val ariseActivityIntent = Intent(this@MainActivity, AriseActivity::class.java)
+            ariseActivityIntent.putExtra("characterDescription", jinwooTextView.text)
+            jinwooTextView.text = "This is Jinwoo Arise era..."
+        }
+        
+        
+        
     }
 
     /** Window & Insets Handling **/
@@ -39,10 +64,15 @@ class MainActivity : AppCompatActivity() {
     private fun setupStatusBarPadding() {
         ViewCompat.setOnApplyWindowInsetsListener(window.decorView) { v, windowInsets ->
             val insets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars())
-            v.updatePadding(0, insets.top, insets.right, 0)
+            v.updatePadding(insets.left, insets.top, insets.right, insets.bottom)
             WindowCompat.getInsetsController(window, window.decorView).apply {
                 isAppearanceLightStatusBars = false
             }
+
+            val systemBars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            
+            
             v.setBackgroundColor(getColor(R.color.deep_purple))
             WindowInsetsCompat.CONSUMED
 
