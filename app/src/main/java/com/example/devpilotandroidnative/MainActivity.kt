@@ -8,13 +8,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updatePadding
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,9 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
-        //setupEdgeToEdgeMode()
-        //setupStatusBarPadding()
+        
+        
         UiHelper.setupStatusBarPadding(window = window, color = getColor(R.color.deep_purple))
         setupSoloLevelingImage()
         setupAriseHybridLink()
@@ -61,34 +55,8 @@ class MainActivity : AppCompatActivity() {
         
         
     }
-
-    /** Window & Insets Handling **/
-
-    private fun setupEdgeToEdgeMode() =
-        UiHelper.applyEdgeToEdge(
-            activity = this,
-            rootViewId = R.id.main
-        )
-
-
-    private fun setupStatusBarPadding() {
-        ViewCompat.setOnApplyWindowInsetsListener(window.decorView) { v, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars())
-            v.updatePadding(insets.left, insets.top, insets.right, insets.bottom)
-            WindowCompat.getInsetsController(window, window.decorView).apply {
-                isAppearanceLightStatusBars = false
-            }
-
-            val systemBars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            
-            
-            v.setBackgroundColor(getColor(R.color.deep_purple))
-            WindowInsetsCompat.CONSUMED
-
-        }
-
-    }
+    
+    
 
     /** ------------------------
      *  Image Setup
