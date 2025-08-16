@@ -13,7 +13,6 @@ import androidx.core.net.toUri
 
 class MainActivity : AppCompatActivity() {
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,12 +37,12 @@ class MainActivity : AppCompatActivity() {
 
         var isDefaultDescription = true
 
-        changeDescriptionButton.setOnClickListener { view ->
+        changeDescriptionButton.setOnClickListener {
 
             if (isDefaultDescription) {
-                jinwooTextView.text = "This is Jinwoo Arise era..."
+                "This is Jinwoo Arise era...".also { jinwooTextView.text = it }
             } else {
-                jinwooTextView.text = getString(R.string.jinwoo_character_description) // put your original in strings.xml
+                jinwooTextView.text = getString(R.string.jinwoo_character_description)
             }
             isDefaultDescription = !isDefaultDescription
             
